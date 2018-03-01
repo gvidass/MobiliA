@@ -108,6 +108,9 @@ public class NewEntryActivity extends AppCompatActivity {
                         "Abilities: " + pokemonas.getAbilities() + "\n" +
                         "Type: " + pokemonas.getType());
 
+                DatabaseSQLite db = new DatabaseSQLite(NewEntryActivity.this);
+                db.addPokemon(pokemonas);
+
                 Intent goToSearchActivity = new Intent(NewEntryActivity.this, SearchActivity.class);
                 startActivity(goToSearchActivity);
             }
